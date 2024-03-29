@@ -1,1 +1,111 @@
 <h1> Contacto </h1>
+
+<%= form_for :contact, url: "/contacts", html: { id: "contact-form" } do |f| %>
+    <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :email %><br>
+        <%= f.email_field :email %>
+    </div>
+    <div class="field">
+        <%= f.label :message %><br>
+        <%= f.text_area :message %>
+    </div>
+    <div class="actions">
+        <%= f.submit "Enviar" %>
+    </div>
+<% end %>
+
+<div id="mensaje-enviado" style="display: none;">
+    Thank you for your message, we will contact you soon.
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("contact-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitar el envío del formulario por defecto
+
+        // Aquí puedes agregar código para enviar los datos del formulario mediante AJAX si lo deseas
+
+        // Mostrar el mensaje de éxito
+        document.getElementById("mensaje-enviado").style.display = "block";
+    });
+});
+</script>
+
+
+<footer class="text-center text-white fixed-bottom" style="background-color: #BDBDBD">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #3b5998;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-facebook-f"></i
+          ></a>
+
+        <!-- Twitter -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #55acee;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-twitter"></i
+          ></a>
+
+        <!-- Google -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #dd4b39;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-google"></i
+          ></a>
+
+        <!-- Instagram -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #ac2bac;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-instagram"></i
+          ></a>
+
+        <!-- Linkedin -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #0082ca;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-linkedin-in"></i
+          ></a>
+        <!-- Github -->
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #333333;"
+           href="#!"
+           role="button"
+           ><i class="fab fa-github"></i
+          ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
+
+
